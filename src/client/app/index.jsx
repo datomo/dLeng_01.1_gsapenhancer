@@ -1,17 +1,21 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import HelloWorld from './hello-world.jsx';
+import Menu from './components/menu.jsx';
+import MainContent from './content/MainContent.jsx';
+
+import Styles from './styles/style.css';
 
 class App extends React.Component {
 	render() {
 		return (
-			<div>	
-				<AwesomeComponent />
+			<div>
+				<Menu />	
+				<MainContent/>
 			</div>
 		);
 	}
 }
 
 const app = document.getElementById('app');
-render( <HelloWorld phrase="ES6"/>, app);
+render( <App/>, app);
