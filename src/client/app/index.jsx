@@ -4,7 +4,7 @@ import {render} from 'react-dom';
 import Menu from './components/menu.jsx';
 import MainContent from './content/MainContent.jsx';
 
-import Styles from './styles/style.css';
+import Styles from './styles/style.scss';
 
 class App extends React.Component {
 	render() {

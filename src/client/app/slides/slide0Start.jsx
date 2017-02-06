@@ -5,23 +5,53 @@ import jQuary from 'jquery';
 import GSAPEnh from 'react-gsap-enhancer';
 import GSAP from 'gsap';
 
+import Button from '../components/buttons.jsx'
 
 import styles from '../styles/index.js';
 
 function moveAnimation({target}) {
 	const test = target.find({className: 'display-1'})
-  	return new TimelineMax({repeat:-1})
-  					.from(test, 3, {x:-500})
-}
+  	return (
+  		new TimelineMax({repeat:-1, yoyo:true})
+  		.set(test,{force3D:false})
+  		.from(test, 3, {scale: 0.2})
+		
+  	)
+};
 
 class Slide0 extends React.Component {
+	constructor(props) {
+		super(props);
+
+		CSSPlugin.defaultForce3D = false;
+
+		this.state = {
+			name: "Hello"
+		};
+
+		this.changeText = this.changeText.bind(this);
+	}
 	componentDidMount() {
 		this.addAnimation(moveAnimation)
+	}
+	changeText(e) {
+		const name = this.state.name;
+		if(name == "Hello") {
+			return this.setState({name:"d-leng.com"})
+		} else {
+			return this.setState({name:"Hello"})
+
+		}
 	}
 	render() {
 		return (
 				<div>
-					<h1 className="display-1">d-leng.com</h1>
+					<div className="text-center">
+						<h1 className="display-1">{this.state.name}</h1>
+					</div>
+					
+					<div className="placeholder-10"></div>
+					<Button onClick={this.changeText}>DONT HIT THAT BUTTON</Button>
 				</div>
 		);
 	}
