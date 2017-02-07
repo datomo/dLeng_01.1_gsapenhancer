@@ -15,26 +15,26 @@ export default class Menu extends React.Component {
 
 		this.changeLangText = this.changeLangText.bind(this);
 	}
-	changeLangText(e) {
+	changeLangText(e, lang_1, lang_2) {
 		const lang = this.state.lang;
-		if(lang == "Deutsch") {
-			return this.setState({lang:"English"})
+		if(lang == lang_1) {
+			return this.setState({lang:lang_2})
 		} else {
-			return this.setState({lang:"Deutsch"})
+			return this.setState({lang:lang_1})
 
 		}
 	}
 
 	render() {
 		return (
-			<div style={styles.greyBg} className="fixed-top">
+			<div style={styles.greyBg} className="fixed-top navbar navbar-inverse">
 				<div className="container">
-					<nav className="navbar navbar-inverse">
+					<nav className="">
 						<div className="row">
 							<a className="navbar-brand col-2" href="#section1">Main</a>
 							<a className="navbar-brand col-2" href="#section2">Project</a>
 							<a className="navbar-brand col-2" href="#section3">Contact</a>
-							<ButtonsLang onClick={this.changeLangText}>{this.state.lang}</ButtonsLang>
+							<ButtonsLang onClick={(e) => this.changeLangText(e, "Deutsch","English")}>{this.state.lang}</ButtonsLang>
 						</div>
 					</nav>
 				</div>

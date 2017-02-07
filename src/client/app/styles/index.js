@@ -1,5 +1,5 @@
 const Height = "100vh";
-const menuHeight = 54;
+const menuHeight = 80;
 const slideHeight = Height
 var styles= {
 	greyBg: {
