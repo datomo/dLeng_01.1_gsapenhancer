@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 
 import CardStack from '../components/cardStack.jsx'
 
-import styles from '../styles/index.js';
 
 export default class Slide1 extends React.Component {
 	render() {

@@ -7,7 +7,6 @@ import GSAP from 'gsap';
 
 import Button from '../components/buttons.jsx'
 
-import styles from '../styles/index.js';
 
 function moveAnimation({target}) {
 	const test = target.find({className: 'display-1'})

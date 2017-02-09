@@ -1,5 +1,13 @@
+@import 'vendor/normalize_5.0.0';
 @import 'variables';
+@import 'font';
 @import 'mixins';
+@import 'menu';
+
+
+html {
+	font-family: $mainFont !important; 	
+}
 
 .slide {
 	position: relative;
@@ -9,24 +17,25 @@
 	height: 50px;
 }
 
-button {
-	color: blue;
-}
-
-.display-1 {
-	color: white;
-}
-
-html {
-	padding: 0;
-	margin: 0;
-	font-family: sans-serif; 
-}
-
 body {
 	margin:0;
+	width: 100vw;
+	position: relative;
 }
 
 .text-center {
 	text-align: center;
 }
+
+.slide {
+	width: 100%;
+	height: 100vh;
+}
+
+#app {
+	width:100%;
+	div {
+		width: 100%;
+	}
+}
+
