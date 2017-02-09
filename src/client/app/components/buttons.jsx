@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 export default class Button extends React.Component {
 	render() {
 		return (
-			<div className="row justify-content-md-center">
-				<button type="button" onClick={this.props.onClick} className="btn btn-danger btn-lg ">
+			<div>
+				<button type="button" onClick={this.props.onClick}>
 					{this.props.children}
 				</button>
 			</div>	

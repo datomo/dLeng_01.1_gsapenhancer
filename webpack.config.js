@@ -1,8 +1,11 @@
 var webpack = require('webpack');
 var path = require('path');
+const ExtractTextWebpack = require("extract-text-webpack-plugin");
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
+
+var SCSS_DIR = path.resolve(__dirname, 'src/client/app/styles/scss');
 
 var config = {
 	entry: APP_DIR + '/index.jsx',
@@ -13,17 +16,23 @@ var config = {
 	module: {
 		loaders :[
 			{
+				test:/\.scss?/,
+				use: ExtractTextWebpack.extract({
+          			use: "css-loader!sass-loader"
+        		})
+			},
+			{
 				test: /\.jsx?/,
 				include : APP_DIR,
 				loader : 'babel-loader',
-			}, 
-			{
-				test:/\.scss?/,
-				include : APP_DIR,
-				loader : 'style-loader!css-loader!sass-loader'
-			}
+			} 
 		]
-	}
+	},
+	plugins: [
+	  	new ExtractTextWebpack({
+	    	filename: 'bundle.css'
+  		})
+	]
 };
 
 module.exports = config;
