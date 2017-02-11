@@ -403,37 +403,42 @@ template {
   display: none; }
 
 #main-nav {
-  background-color: #19425f; }
-  #main-nav ul {
+  background-color: #19425f;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%; }
+  #main-nav .wrapper {
     width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  #main-nav li {
-    float: left;
-    width: 33.33333%; }
+    position: relative; }
   #main-nav a {
+    width: 33.33333%;
     text-decoration: none;
-    display: block;
     text-align: center;
-    padding: 16px;
+    display: inline-block;
     color: #a9a9a9;
-    font-size: 20px; }
+    font-size: 20px;
+    padding: 15px 0; }
+    @media screen and (max-width: 300px) {
+      #main-nav a {
+        width: 100%; } }
     #main-nav a:hover {
       background-color: #14344b; }
-  #main-nav:after {
-    content: "";
-    display: block;
-    clear: both; }
 
 html {
-  font-family: "Pontano Sans", sans-serif !important; }
+  font-family: "Pontano Sans", sans-serif; }
 
 .slide {
   position: relative; }
 
 .placeholder-10 {
   height: 50px; }
+
+.placeholderMenu {
+  height: 50px; }
+  @media screen and (max-width: 300px) {
+    .placeholderMenu {
+      height: 150px; } }
 
 body {
   margin: 0;
@@ -451,3 +456,40 @@ body {
   width: 100%; }
   #app div {
     width: 100%; }
+
+#slide01 {
+  background-color: #0f8bad; }
+
+#slide02 {
+  background-color: #eee; }
+
+#slide03 {
+  background-color: #424b7c; }
+
+button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #efefef;
+  border: 0px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  button:hover {
+    background-color: #e0e0e0; }
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 24% !important;
+  border: 1px solid;
+  text-align: justify;
+  padding: 1%; }
+  @media screen and (max-width: 600px) {
+    .card {
+      width: 50% !important; } }
+  .card .card-img-top {
+    width: 100%; }
+
+#card01 {
+  left: 37%; }
+  @media screen and (max-width: 600px) {
+    #card01 {
+      left: 24%; } }

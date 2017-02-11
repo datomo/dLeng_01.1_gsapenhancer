@@ -28,12 +28,10 @@ export default class Menu extends React.Component {
 		return (
 			<nav id="main-nav">
 				<div className="wrapper">
-					<ul>
-						<li><a href="#section1">Main</a></li>
-						<li><a href="#section2">Project</a></li>
-						<li><a href="#section3">Contact</a></li>
-						{/*<li><ButtonsLang onClick={(e) => this.changeLangText(e, "Deutsch","English")}>{this.state.lang}</ButtonsLang></li>*/}
-					</ul>
+					<a href="#section1">Main</a>
+					<a href="#section2">Project</a>
+					<a href="#section3">Contact</a>
+					{/*<li><ButtonsLang onClick={(e) => this.changeLangText(e, "Deutsch","English")}>{this.state.lang}</ButtonsLang></li>*/}
 				</div>
 			</nav>
 		);

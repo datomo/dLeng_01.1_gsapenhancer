@@ -16,17 +16,17 @@ export default class MainContent extends React.Component {
 		return (
 			<div>
 				<ScrollableAnchor id={'section1'}>
-					<Slide>	
+					<Slide id="slide01">	
 						<Slide0 />
 					</Slide>
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'section2'}>
-					<Slide>  
+					<Slide id="slide02">  
 						<Slide1 />
 					</Slide>
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'section3'}>
-					<Slide>  
+					<Slide id="slide03">  
 						<Slide2 />
 					</Slide>
 				</ScrollableAnchor>

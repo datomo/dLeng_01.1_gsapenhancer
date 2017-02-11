@@ -6,7 +6,7 @@
 
 
 html {
-	font-family: $mainFont !important; 	
+	font-family: $mainFont; 	
 }
 
 .slide {
@@ -15,6 +15,14 @@ html {
 
 .placeholder-10 {
 	height: 50px;
+}
+
+.placeholderMenu{
+	height: 50px;
+
+	@include mQ(300px){
+		height: (3*50px);
+	}
 }
 
 body {
@@ -39,3 +47,46 @@ body {
 	}
 }
 
+
+#slide01{
+	background-color: $badBlue;
+}
+#slide02{
+	background-color: #eee;
+}
+#slide03{
+	background-color: $darkBlue;
+}
+
+button{
+	@include button;
+}
+
+.card{
+	display: inline-block;
+	position: relative;
+	width: 24% !important;
+	border: 1px solid;
+	text-align: justify;
+	padding: 1%;
+
+	@include mQ(600px){
+		width: 50% !important;
+	}
+
+	.card-img-top{
+		width:100%;
+	}
+	
+	.card-block {
+	}	
+}
+
+#card01{
+	left: 37%;
+	
+	@include mQ(600px){
+		left: 24%;
+	}
+
+}

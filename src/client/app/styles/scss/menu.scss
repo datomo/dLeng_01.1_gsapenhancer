@@ -1,33 +1,30 @@
 #main-nav {
 	background-color: $oceanBlue;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	width: 100%;
 
-	ul {
+	.wrapper {
 		width: 100%;
-		list-style: none;
-		margin:0;
-    	padding: 0;
-
-	}
-
-	li {
-		float: left;
-    	width: (100% / 3);
-
+		position: relative;
 	}
 
 	a {
+		width: (100% / 3);
 	    text-decoration: none;
-	    display: block;
 	    text-align: center;
-	    padding: 16px;
+	    display:inline-block;
 	    color: $linkColor;
 	    font-size: $navSize;
+	    padding: 15px 0;
+
+	    @include mQ(300px){
+	    	width:100%;
+	    }
 
 	    &:hover{
 	    	background-color: darken($oceanBlue, 5)
 	    }
 	}
-
-
-	@include clearFix;
 }

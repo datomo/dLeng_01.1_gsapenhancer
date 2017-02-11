@@ -50,7 +50,9 @@ class Slide0 extends React.Component {
 					</div>
 					
 					<div className="placeholder-10"></div>
-					<Button onClick={this.changeText}>DONT HIT THAT BUTTON</Button>
+					<div className="text-center">
+						<Button onClick={this.changeText} unpressedText="DONT PRESS THAT BUTTON" pressedText="silly you"></Button>
+					</div>
 				</div>
 		);
 	}

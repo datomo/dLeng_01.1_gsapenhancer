@@ -5,7 +5,7 @@ import Card from './cards.jsx'
 export default class CardStack extends React.Component {
 	render() {
 		return (
-				<Card />
+				<Card id="card01"/>
 		);
 	}
 };

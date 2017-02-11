@@ -19,3 +19,14 @@
 	}
 	
 }
+
+@mixin button{
+	padding: 10px;
+	cursor: pointer;
+	background-color: $snowWhite;
+	border: 0px;
+	box-shadow: $liteShadow;
+	&:hover{
+		background-color: darken($snowWhite,6);
+	}
+}
