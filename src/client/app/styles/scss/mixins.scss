@@ -28,5 +28,6 @@
 	box-shadow: $liteShadow;
 	&:hover{
 		background-color: darken($snowWhite,6);
+		box-shadow: $hardShadow;
 	}
 }

@@ -407,7 +407,8 @@ template {
   position: fixed;
   z-index: 1;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   #main-nav .wrapper {
     width: 100%;
     position: relative; }
@@ -454,8 +455,6 @@ body {
 
 #app {
   width: 100%; }
-  #app div {
-    width: 100%; }
 
 #slide01 {
   background-color: #0f8bad; }
@@ -473,7 +472,8 @@ button {
   border: 0px;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   button:hover {
-    background-color: #e0e0e0; }
+    background-color: #e0e0e0;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4); }
 
 .card {
   display: inline-block;
@@ -493,3 +493,8 @@ button {
   @media screen and (max-width: 600px) {
     #card01 {
       left: 24%; } }
+
+.child-container {
+  position: relative;
+  width: 80%;
+  left: 10%; }

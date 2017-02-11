@@ -26,7 +26,7 @@ export default class MainContent extends React.Component {
 					</Slide>
 				</ScrollableAnchor>
 				<ScrollableAnchor id={'section3'}>
-					<Slide id="slide03">  
+					<Slide id="slide03" container="true">  
 						<Slide2 />
 					</Slide>
 				</ScrollableAnchor>

@@ -42,9 +42,6 @@ body {
 
 #app {
 	width:100%;
-	div {
-		width: 100%;
-	}
 }
 
 
@@ -89,4 +86,10 @@ button{
 		left: 24%;
 	}
 
+}
+
+.child-container{
+	position: relative;
+	width: 80%;
+	left: 10%;
 }
