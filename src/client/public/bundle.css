@@ -484,20 +484,22 @@ button {
   display: inline-block;
   position: absolute;
   width: 30%;
-  border: 1px solid;
   border-radius: 7px;
   text-align: justify;
+  background-color: #87a7a7;
   padding: 1%;
-  z-index: 1; }
+  z-index: 1;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   @media screen and (max-width: 600px) {
     .card {
       width: 50%; } }
   .card .card-img-top {
-    width: 100%; }
+    width: 100%;
+    box-shadow: inset 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 #cardLeft {
-  left: 5%;
-  width: 24%; }
+  left: 10%;
+  width: 18%; }
   @media screen and (max-width: 600px) {
     #cardLeft {
       left: 24%; } }
@@ -510,8 +512,8 @@ button {
       left: 24%; } }
 
 #cardRight {
-  left: 71%;
-  width: 24%; }
+  left: 72%;
+  width: 18%; }
   @media screen and (max-width: 600px) {
     #cardRight {
       left: 24%; } }

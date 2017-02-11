@@ -6,8 +6,10 @@ export default class Card extends React.Component {
 	render() {
 		return (
 				<div className="card" id={this.props.id}>
-    				<img className="card-img-top" src="http://placehold.it/150x150" alt="Card image cap" />
-    				
+    				<div className="card-img-wrapper">
+    					<img className="card-img-top" src="http://placehold.it/150x150" alt="Card image cap" />
+    				</div>
+
     				<div className="card-block">
 				      	<h4 className="card-title">Card title</h4>
 				      	<p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

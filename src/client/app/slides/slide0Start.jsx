@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import jQuary from 'jquery';
 import GSAPEnh from 'react-gsap-enhancer';
 import GSAP from 'gsap';
 
@@ -45,6 +44,7 @@ class Slide0 extends React.Component {
 	render() {
 		return (
 				<div>
+
 					<div className="text-center">
 						<h1 className="display-1">{this.state.name}</h1>
 					</div>
