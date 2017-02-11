@@ -402,6 +402,10 @@ template {
 [hidden] {
   display: none; }
 
+p {
+  font-size: 20px;
+  line-height: 25px; }
+
 #main-nav {
   background-color: #19425f;
   position: fixed;
@@ -480,6 +484,7 @@ button {
   position: relative;
   width: 24% !important;
   border: 1px solid;
+  border-radius: 7px;
   text-align: justify;
   padding: 1%; }
   @media screen and (max-width: 600px) {
@@ -492,6 +497,18 @@ button {
   left: 37%; }
   @media screen and (max-width: 600px) {
     #card01 {
+      left: 24%; } }
+
+#card02 {
+  left: 37%; }
+  @media screen and (max-width: 600px) {
+    #card02 {
+      left: 24%; } }
+
+#card03 {
+  left: 37%; }
+  @media screen and (max-width: 600px) {
+    #card03 {
       left: 24%; } }
 
 .child-container {

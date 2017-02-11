@@ -64,6 +64,7 @@ button{
 	position: relative;
 	width: 24% !important;
 	border: 1px solid;
+	border-radius: 7px;
 	text-align: justify;
 	padding: 1%;
 
@@ -87,6 +88,26 @@ button{
 	}
 
 }
+
+#card02{
+	left: 37%;
+	
+	@include mQ(600px){
+		left: 24%;
+	}
+
+}
+
+#card03{
+	left: 37%;
+	
+	@include mQ(600px){
+		left: 24%;
+	}
+
+}
+
+
 
 .child-container{
 	position: relative;
