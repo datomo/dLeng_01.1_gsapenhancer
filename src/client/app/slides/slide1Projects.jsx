@@ -37,6 +37,7 @@ class Slide1 extends React.Component {
 				<div id="trigger1" className="spacer s1"></div>
 				<h1 id ="title-slide01"  className="display-1 child-container">Projects</h1>
 				<CardStack />
+				<div id="trigger2" className="spacer s1"></div>
 			</div>
 		);
 	}

@@ -7,7 +7,7 @@ export default class Card extends React.Component {
 		return (
 				<div className="card" id={this.props.id}>
     				<div className="card-img-wrapper">
-    					<img className="card-img-top" src="http://placehold.it/150x150" alt="Card image cap" />
+    					<img className="card-img-top" src="http://placehold.it/400x400" alt="Card image cap" />
     				</div>
 
     				<div className="card-block">
