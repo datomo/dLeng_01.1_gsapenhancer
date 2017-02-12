@@ -1,25 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import GSAPEnh from 'react-gsap-enhancer';
-import GSAP from 'gsap';
 
-
-
-function animButton({target}) {
-	const button = target.find({type: 'button'})
-	return (
-		new TimelineMax({paused: true})
-			.add('start')
-			.to(button, 1, {
-	  	
-	  		})
-	  		.add('hovered')
-
-	)
-}
-
-class Button extends React.Component {
+export default class Button extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -31,9 +14,6 @@ class Button extends React.Component {
 		this.changeText = this.changeText.bind(this);
 		this.setText = this.setText.bind(this);
 		this.functionWrapper = this.functionWrapper.bind(this);
-	}
-	componentDidMount() {
-		this.animButton = this.addAnimation(animButton)
 	}
 
 
@@ -53,15 +33,12 @@ class Button extends React.Component {
 	functionWrapper() {
 		this.changeText() ; 
 		this.props.onClick();
-		this.addAnimation(animButton);
 	}
 	render() {
 		return (
 			<div>
 				<button type="button" 
 						onClick={this.functionWrapper} 
-						onMouseEnter= {() => this.animButton.tweenTo('hovered')}
-						onMouseLeave= {() => this.animButton.tweenTo('start')}
 						className={this.props.className}>
 
 					{this.state.name}
@@ -71,6 +48,3 @@ class Button extends React.Component {
 		)
 	}
 };
-
-const GSAPWrapped = GSAPEnh(Button)
-export default GSAPWrapped;

@@ -1,48 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import gsap from 'gsap';
 import GSAPEnh from 'react-gsap-enhancer';
-import GSAP from 'gsap';
-import * as ScrollMagic from 'scrollmagic';
+
+import ScrollMagic from 'scrollmagic';
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 import CardStack from '../components/cardStack.jsx'
 
-
-function animStart({target}) {
-	const test = target.find({id: 'title-slide01'})
-  	return (
-  		new TweenMax
-  		.set(test, {x: -300})
-  		
-		
-  	)
-};
-
-
-	var controller = new ScrollMagic.Controller();
-
-	var scene = new ScrollMagic.Scene({
-									triggerElement: this.find({id: 'title-slide01'})
-								})
-								.setTween("#title-slide01", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
-								.addTo(controller);
-
+	
+var controller = new ScrollMagic.Controller();
 
 
 class Slide1 extends React.Component {
 	componentDidMount() {
 		/*this.animStart = this.addAnimation(animStart)*/
+		var el = document.getElementById("title-slide01")
+		var cards = document.getElementsByClassName("card")
+
+		let tween = new TimelineMax()
+							.from(el, 1, {x: -300}, "start")
+							.from(cards, 0.5, {scale: 0}, "start")
+
+		var scene = new ScrollMagic.Scene({
+									triggerElement: document.getElementById("trigger1")
+								})
+								.setTween(tween)
+								.addIndicators()
+								.addTo(controller);
 	}
 	render() {
 		return (
 			<div>
 				<div id="trigger1" className="spacer s1"></div>
-				<h1 id ="title-slide01" className="display-1 child-container">Projects</h1>
+				<h1 id ="title-slide01"  className="display-1 child-container">Projects</h1>
 				<CardStack />
 			</div>
 		);
 	}
 };
 
-const GSAPTest = GSAPEnh(Slide1)
-export default GSAPTest;
+const GSAPWrapped = GSAPEnh(Slide1)
+export default GSAPWrapped;
