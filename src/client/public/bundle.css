@@ -406,6 +406,10 @@ p {
   font-size: 20px;
   line-height: 25px; }
 
+.display-1 {
+  font-size: 40px;
+  line-height: 45px; }
+
 #main-nav {
   background-color: #19425f;
   position: fixed;
@@ -446,6 +450,9 @@ body {
   margin: 0;
   width: 100%;
   position: relative; }
+
+p {
+  text-align: justify; }
 
 .text-center {
   text-align: center; }
@@ -525,3 +532,11 @@ button {
 
 .animation {
   position: relative; }
+
+.bottom {
+  position: absolute;
+  top: 100%; }
+
+.top {
+  position: absolute;
+  top: 0%; }
