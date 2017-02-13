@@ -1,0 +1,27 @@
+.contactBox {
+	position: relative;
+    width: 80%;
+    height: 40vh;
+    left: 10%;
+    top: 10vh;
+    background-color: blue;
+    border-radius: 30px;
+}
+
+.contactSvg {
+	height: 100%;
+    width: 33.33%;
+    position: absolute;
+}
+
+#contactLeft {
+	left: 0;
+}
+
+#contactCenter {
+	left: (100% - (33.33% * 2))
+}
+
+#contactRight {
+	left: (100% - (33.33%))
+}

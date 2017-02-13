@@ -13,7 +13,6 @@ export default class Slide1 extends React.Component {
 		return (
 			<div>
 				<h1 id ="title-slide01"  className="display-1 child-container">Projects</h1>
-				<div className="placeholder-10"></div>
 				<CardStack />
 			</div>
 		);

@@ -4,6 +4,7 @@
 @import 'mixins';
 @import 'menu';
 @import 'cards';
+@import 'contact';
 
 
 html {
@@ -15,7 +16,7 @@ html {
 }
 
 .placeholderMenu{
-	height: 50px;
+	height: 5vh;
 
 	@include mQ(300px){
 		height: (3*50px);
@@ -39,7 +40,7 @@ p {
 .slide {
 	width: 100%;
 	height: 100vh;
-	overflow-x: hidden;
+	overflow: hidden;
 	position: relative;
 }
 
@@ -86,7 +87,8 @@ button{
 
 .startAnimation {
 	position: absolute;
-    width: 100%;
+    width: 80%;
+    left: 10%;
 	top: 40%;
 }
 

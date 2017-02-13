@@ -403,17 +403,15 @@ template {
   display: none; }
 
 p {
-  font-size: 20px;
-  line-height: 25px; }
+  font-size: 20px; }
 
 .display-1 {
-  font-size: 40px;
-  line-height: 45px; }
+  font-size: 60px; }
 
 .card-title {
   font-size: 25px;
-  line-height: 15px;
-  text-align: center; }
+  text-align: center;
+  margin: 2%; }
 
 #main-nav {
   background-color: #19425f;
@@ -447,7 +445,8 @@ p {
 .card {
   display: inline-block;
   border-radius: 7px;
-  text-align: justify; }
+  text-align: justify;
+  width: 100%; }
   @media screen and (max-width: 600px) {
     .card {
       width: 50%; } }
@@ -456,15 +455,15 @@ p {
     width: 100%; }
 
 @media screen and (max-width: 600px) {
-  .cardLeft {
+  #cardLeft {
     left: 24%; } }
 
 @media screen and (max-width: 600px) {
-  .cardCenter {
+  #cardCenter {
     left: 24%; } }
 
 @media screen and (max-width: 600px) {
-  .cardRight {
+  #cardRight {
     left: 24%; } }
 
 .card-img-wrapper {
@@ -478,11 +477,22 @@ p {
   width: 100%;
   background-color: #87a7a7; }
 
-.clickable {
+.clickable-passive {
   position: relative;
   cursor: pointer;
   display: inline-block;
-  width: 33.33333%; }
+  width: 25%;
+  padding-top: 2%; }
+
+.clickable-active {
+  background-color: #19425f;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 25%;
+  padding-top: 2%;
+  border-radius: 30px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .text-container {
   width: 90%;
@@ -495,6 +505,33 @@ p {
   width: 90%;
   left: 5%; }
 
+#cardCenterId {
+  margin-left: 12.5%;
+  margin-right: 12.5%; }
+
+.contactBox {
+  position: relative;
+  width: 80%;
+  height: 40vh;
+  left: 10%;
+  top: 10vh;
+  background-color: blue;
+  border-radius: 30px; }
+
+.contactSvg {
+  height: 100%;
+  width: 33.33%;
+  position: absolute; }
+
+#contactLeft {
+  left: 0; }
+
+#contactCenter {
+  left: 33.34%; }
+
+#contactRight {
+  left: 66.67%; }
+
 html {
   font-family: "Pontano Sans", sans-serif; }
 
@@ -502,7 +539,7 @@ html {
   height: 50px; }
 
 .placeholderMenu {
-  height: 50px; }
+  height: 5vh; }
   @media screen and (max-width: 300px) {
     .placeholderMenu {
       height: 150px; } }
@@ -521,7 +558,7 @@ p {
 .slide {
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative; }
 
 #slide01 {
@@ -566,5 +603,6 @@ button {
 
 .startAnimation {
   position: absolute;
-  width: 100%;
+  width: 80%;
+  left: 10%;
   top: 40%; }

@@ -5,6 +5,9 @@ import Card from './cards.jsx';
 import GSAP from 'gsap';
 import GSAPEnh from 'react-gsap-enhancer';
 
+const active= "clickable-active"
+const passive= "clickable-passive"
+
 const startText = "Click on one of the pictures to learn more about my past projects."
 const longTextFull = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
@@ -17,7 +20,10 @@ class CardStack extends React.Component {
 		super(props);
 		
 		this.state = {
-			infoText: startText
+			infoText: startText,
+			classNameLeft: "clickable-passive",
+			classNameCenter: "clickable-passive",
+			classNameRight: "clickable-passive"
 		}
 
 		this.changeTextLeft= this.changeTextLeft.bind(this)
@@ -27,16 +33,19 @@ class CardStack extends React.Component {
 
 
 
-	changeTextLeft() {
+	changeTextLeft(e) {
 		this.setState({infoText: infoTextLeft})
+		this.setState({classNameLeft: active, classNameCenter: passive, classNameRight: passive})
 	}
 
-	changeTextCenter() {
+	changeTextCenter(e) {
 		this.setState({infoText: infoTextCenter})
+		this.setState({classNameCenter: active, classNameLeft: passive, classNameRight: passive})
 	}
 
-	changeTextRight() {
+	changeTextRight(e) {
 		this.setState({infoText: infoTextRight})
+		this.setState({classNameRight: active, classNameLeft: passive, classNameCenter: passive})
 	}
 
 
@@ -46,13 +55,13 @@ class CardStack extends React.Component {
 		return (
 			<div>
 				<div className="card-stack">
-					<div className="clickable cardLeft" onClick={this.changeTextLeft}>
+					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeTextLeft}>
 						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch"/>
 					</div>
-					<div className="clickable cardCenter" onClick={this.changeTextCenter}>
+					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeTextCenter}>
 						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio"/>
 					</div>
-					<div className="clickable cardRight" onClick={this.changeTextRight}>
+					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeTextRight}>
 						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch"/>
 					</div>
 				</div>
