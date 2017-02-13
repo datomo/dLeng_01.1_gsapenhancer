@@ -9,8 +9,6 @@ import Slide1 from '../slides/slide1Projects.jsx';
 import Slide2 from '../slides/slide2Contact.jsx';
 
 
-configureAnchors({offset: 0, scrollDuration: 200})
-
 export default class MainContent extends React.Component {
 	render() {
 		return (

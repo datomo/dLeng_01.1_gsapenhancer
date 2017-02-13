@@ -35,11 +35,9 @@
   },
   "dependencies": {
     "gsap": "^1.19.1",
-    "jquery": "^3.1.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-gsap-enhancer": "^0.3.0",
-    "react-scrollable-anchor": "^0.4.1",
-    "scrollmagic": "^2.0.5"
+    "react-scrollable-anchor": "^0.4.1"
   }
 }

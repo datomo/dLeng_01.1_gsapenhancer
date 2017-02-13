@@ -1,27 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import gsap from 'gsap';
-import GSAPEnh from 'react-gsap-enhancer';
 
-import ScrollMagic from 'scrollmagic';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
-var controller2 = new ScrollMagic.Controller();
-
-class Slide2 extends React.Component {
+export default class Slide2 extends React.Component {
 	componentDidMount() {
-		
-		let el2 = document.getElementById("title-slide02")
-		let tween2 = TweenMax.from(el2, 0.5, {left: -300})
-		
-		var scene = new ScrollMagic.Scene({
-									triggerElement: document.getElementById("trigger2")
-								})
-								.setTween(tween2)
-								.addIndicators()
-								.addTo(controller2);
+
 	}
 	render() {
 		return (
@@ -36,7 +20,3 @@ class Slide2 extends React.Component {
 	}
 };
 
-
-
-const GSAPWrapped = GSAPEnh(Slide2)
-export default GSAPWrapped;
