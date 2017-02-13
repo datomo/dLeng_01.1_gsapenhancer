@@ -6,13 +6,17 @@ import GSAP from 'gsap';
 
 import Button from '../components/buttons.jsx'
 
+const start = "Hi, there my Name is David and I would love to build your website!"
+
+const message2 = "I spezialized in web animaitons but also got experience in different parts of webdevelopment."
 
 function moveAnimation({target}) {
 	const test = target.find({className: 'display-1'})
   	return (
-  		new TimelineMax({repeat:-1, yoyo:true})
+  		new TimelineMax({})
   		.set(test,{force3D:false})
-  		.from(test, 3, {scale: 0.2})
+  		.from(test, 1, {scale:2})
+  		.add('end')
 		
   	)
 };
@@ -24,34 +28,62 @@ class Slide0 extends React.Component {
 		CSSPlugin.defaultForce3D = false;
 
 		this.state = {
-			name: "Hello"
+			text: start,
+			status: 0
 		};
 
 		this.changeText = this.changeText.bind(this);
+		this.functionWrapper = this.functionWrapper.bind(this);
 	}
 	componentDidMount() {
 		this.addAnimation(moveAnimation)
 	}
 	changeText(e) {
-		const name = this.state.name;
-		if(name == "Hello") {
-			return this.setState({name:"d-leng.com"})
-		} else {
-			return this.setState({name:"Hello"})
+		const status = this.state.status
+		const text = this.state.text;
+		if(status == 0) {
+			return (
+				this.setState({text: message2}),
+				this.setState({status: 0}),
+				this.addAnimation(moveAnimation)
+			)
+		} else if(status == 1) {
+			return (
+				this.setState({text: "du"}),
+				this.setState({status: 2}),
+				this.addAnimation(moveAnimation)
+			)
 
+		}else if(status == 2) {
+			return (
+				this.setState({text: "Lauch"}),
+				this.setState({status: 3}),
+				this.addAnimation(moveAnimation)
+			)
+		}
+		else if(status == 3) {
+			return (
+				this.setState({text: start}),
+				this.setState({status: 0}),
+				this.addAnimation(moveAnimation)
+			)
 		}
 	}
+	functionWrapper() {
+		this.changeText
+	}
+
 	render() {
 		return (
 				<div>
-
-					<div className="text-center">
-						<h1 className="display-1">{this.state.name}</h1>
+					<div className="startAnimation">
+						<div className="text-center">
+						<h1 className="display-1">{this.state.text}</h1>
+						</div>
 					</div>
 					
-					<div className="placeholder-10"></div>
-					<div className="text-center">
-						<Button onClick={this.changeText} unpressedText="DONT PRESS THAT BUTTON" pressedText="silly you"></Button>
+					<div className="text-center bottom-80">
+						<Button onClick={this.changeText} unpressedText="Next" pressedText="Back"></Button>
 					</div>
 				</div>
 		);

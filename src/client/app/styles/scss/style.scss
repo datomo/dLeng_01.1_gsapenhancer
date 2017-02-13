@@ -73,12 +73,21 @@ button{
 	top: 100%;
 }
 
+.bottom-80 {
+	top: 80%;
+	position: absolute;
+	left: 75%;
+}
+
 .top {
 	position:absolute;
 	top: 0%;
 }
 
-.clickable {
-	position: relative;
-    cursor: pointer;
+.startAnimation {
+	position: absolute;
+    width: 100%;
+	top: 40%;
 }
+
+
