@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import GSAP from 'gsap';
 import GSAPEnh from 'react-gsap-enhancer';
 
+
 function showClose({target}) {
 	const button = target.find({className: 'close-button'})
   	return (
@@ -22,11 +23,11 @@ class Card extends React.Component {
 		return (
 				<div className="card" id={this.props.id} >
     				<div className="card-img-wrapper">
-    					<img className="card-img-top" src="http://placehold.it/400x400" alt="Card image cap" />
+    					<img className="card-img-top" src={this.props.imgLink} alt="Card image cap" />
     				</div>
 
     				<div className="card-block">
-				      	<h4 className="card-title">{this.props.title}</h4>
+				      	<h3 className="card-title">{this.props.title}</h3>
     				</div>
   				</div>
   		)

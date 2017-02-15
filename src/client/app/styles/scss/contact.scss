@@ -4,8 +4,9 @@
     height: 40vh;
     left: 10%;
     top: 10vh;
-    background-color: blue;
+    //background-color: blue;
     border-radius: 30px;
+
 }
 
 .contactSvg {
@@ -24,4 +25,43 @@
 
 #contactRight {
 	left: (100% - (33.33%))
+}
+
+.svg-container {
+	position:relative;
+
+
+}
+
+.contactSvgIcon {
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	height: 70%;
+	top: 15%; 
+	cursor: pointer;
+	
+	-webkit-filter: drop-shadow( 0px 6px 20px #000  );
+            filter: drop-shadow( 0px 6px 20px #000  );
+
+	path {
+		fill: #eee;
+	}
+
+	&:hover{
+		path {
+			fill: #000;
+		}
+		
+	}
+
+}
+
+.titleSvg {
+	position: relative;
+	top: 85%;
+
+	h3 {
+		font-size: 30px;
+	}
 }

@@ -5,6 +5,9 @@ import Card from './cards.jsx';
 import GSAP from 'gsap';
 import GSAPEnh from 'react-gsap-enhancer';
 
+import Ref from '../data/images/refallschwil.png';
+import Sprung from '../data/images/sprungbraett.png'
+
 const active= "clickable-active"
 const passive= "clickable-passive"
 
@@ -56,20 +59,22 @@ class CardStack extends React.Component {
 			<div>
 				<div className="card-stack">
 					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeTextLeft}>
-						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch"/>
+						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={"public/" + Ref}/>
 					</div>
 					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeTextCenter}>
-						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio"/>
+						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={"public/" + Ref}/>
 					</div>
 					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeTextRight}>
-						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch"/>
+						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={"public/" + Sprung}/>
 					</div>
 				</div>
 				<div className="placeholder-10"></div>
 				<div className="cardInfo info-container">
 					<div className="text-container">
-						<p>Description:</p>
-						{this.state.infoText}
+						<h3>Description:</h3>
+						<p>
+							{this.state.infoText}
+						</p>
 					</div>
 				</div>
 			</div>

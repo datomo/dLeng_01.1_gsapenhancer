@@ -25,7 +25,28 @@ var config = {
 				test: /\.jsx?/,
 				include : APP_DIR,
 				loader : 'babel-loader',
-			} 
+			},
+			{
+				test: /\.svg$/,
+				include : APP_DIR,
+				loaders: [ 'babel-loader',
+    				{
+		      			loader: 'react-svg-loader',
+		      			query: {
+		        			svgo: {
+		          				plugins: [{removeTitle: false}],
+		          				floatPrecision: 2
+		        			}
+		      			}
+		    		}
+    			]						
+			},
+			{
+			    test: /\.(jpe?g|png|gif)$/,
+			    include : APP_DIR, 
+			    loader: 'file-loader?limit=10000!img-loader' 
+			    
+			}
 		]
 	},
 	plugins: [

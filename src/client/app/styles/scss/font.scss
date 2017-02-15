@@ -4,7 +4,19 @@ $mainFont: 'Pontano Sans', sans-serif;
 $linkColor: #a9a9a9;
 
 p{
-	font-size: 20px;
+	font-size: 1vw;
+}
+
+h1 {
+	font-size: 2vw;
+}
+
+h2 {
+	font-size: 1.75vw;
+}
+
+h3 {
+	font-size: 1.5vw;
 }
 
 .display-1 {
@@ -13,7 +25,7 @@ p{
 
 .card-title {
 	
-		font-size: 25px;
+		
 		text-align: center;
 		margin: 2%;
 	

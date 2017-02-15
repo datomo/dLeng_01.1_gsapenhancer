@@ -118,7 +118,7 @@ class Slide0 extends React.Component {
 					</div>
 					
 					<div className="text-center bottom-80">
-						<Button onClick={this.changeText} unpressedText="Next" pressedText="Back"></Button>
+						<Button onClick={this.changeText} unpressedText="Next" pressedText="Next"></Button>
 					</div>
 				</div>
 		);
