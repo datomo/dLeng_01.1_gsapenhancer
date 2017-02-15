@@ -44,7 +44,7 @@ var config = {
 			{
 			    test: /\.(jpe?g|png|gif)$/,
 			    include : APP_DIR, 
-			    loader: 'file-loader?limit=10000!img-loader' 
+			    loader: 'file-loader?name=/compImg/[hash].[ext]!img-loader' 
 			    
 			}
 		]

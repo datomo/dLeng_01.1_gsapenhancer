@@ -5,8 +5,9 @@ import Card from './cards.jsx';
 import GSAP from 'gsap';
 import GSAPEnh from 'react-gsap-enhancer';
 
-import Ref from '../data/images/refallschwil.png';
-import Sprung from '../data/images/sprungbraett.png'
+import Ref from '../data/images/refallschwil.jpg';
+import Sprung from '../data/images/sprungbraett.jpg';
+import Leng from '../data/images/dLeng.jpg';
 
 const active= "clickable-active"
 const passive= "clickable-passive"
@@ -24,6 +25,7 @@ class CardStack extends React.Component {
 		
 		this.state = {
 			infoText: startText,
+			projectLink: "",
 			classNameLeft: "clickable-passive",
 			classNameCenter: "clickable-passive",
 			classNameRight: "clickable-passive"
@@ -39,16 +41,19 @@ class CardStack extends React.Component {
 	changeTextLeft(e) {
 		this.setState({infoText: infoTextLeft})
 		this.setState({classNameLeft: active, classNameCenter: passive, classNameRight: passive})
+		this.setState({projectLink: "refallschwil.ch"})
 	}
 
 	changeTextCenter(e) {
 		this.setState({infoText: infoTextCenter})
 		this.setState({classNameCenter: active, classNameLeft: passive, classNameRight: passive})
+		this.setState({projectLink: "d-Leng.com"})
 	}
 
 	changeTextRight(e) {
 		this.setState({infoText: infoTextRight})
 		this.setState({classNameRight: active, classNameLeft: passive, classNameCenter: passive})
+		this.setState({projectLink: "sprungbraett-festival.ch"})
 	}
 
 
@@ -62,7 +67,7 @@ class CardStack extends React.Component {
 						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={"public/" + Ref}/>
 					</div>
 					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeTextCenter}>
-						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={"public/" + Ref}/>
+						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={"public/" + Leng}/>
 					</div>
 					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeTextRight}>
 						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={"public/" + Sprung}/>
@@ -75,6 +80,9 @@ class CardStack extends React.Component {
 						<p>
 							{this.state.infoText}
 						</p>
+						<a href={"http://" + this.state.projectLink}>
+							{this.state.projectLink}
+						</a>
 					</div>
 				</div>
 			</div>

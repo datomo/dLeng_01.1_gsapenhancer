@@ -2,13 +2,15 @@
 	position: relative;
 	width: 80%;
 	left: 10%;
+	margin-bottom: 5vh;
 }
 
 .card{
 	display: inline-block;
 	border-radius: 7px;
 	text-align: justify;
-	width: 100%;
+	width: 20vw;
+    height: 15vw;
 
 
 	@include mQ(600px){
@@ -17,7 +19,14 @@
 
 	.card-img-top{
     	box-shadow: $liteShadow;
-    	width: 100%;
+    	max-width:100%;
+    	height: 100%;
+    	object-fit: cover;
+    	position:relative;
+
+    	&:hover {
+    		box-shadow: $hardShadow;
+    	}
 	}
 
 	
@@ -55,6 +64,7 @@
 	position: relative;
 	width: 90%;
 	left: 5%;
+	height: 90%;
 }
 
 .cardInfo {
@@ -70,7 +80,7 @@
     cursor: pointer;
     display: inline-block;
     width: 25%;
-    padding-top: 2%;
+        padding: 2% 0;
 }
 
 .clickable-active {
@@ -79,7 +89,7 @@
     cursor: pointer;
     display: inline-block;
     width: 25%;
-    padding-top: 2%;
+    padding: 2% 0;
     border-radius: 30px;
     box-shadow: $liteShadow;
 }
