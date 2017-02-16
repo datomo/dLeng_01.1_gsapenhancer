@@ -29,8 +29,19 @@
     height: 15vw;
 
 
-	@include mQ(600px){
-		width: 50%;
+	@include mQ(750px){
+		position: relative;
+		width: 100%;
+		height: auto;
+		
+		.card-img-wrapper {
+			height: 0px;
+			visibility: hidden;
+		}
+		.card-img-top {
+			height: 0px;
+			visibility: hidden;
+		}
 	}
 
 	.card-img-top{
@@ -53,25 +64,13 @@
 
 #cardLeft{
 	
-	@include mQ(600px){
-		left: 24%;
-	}
-
 }
 
 #cardCenter{
 	
-	@include mQ(600px){
-		left: 24%;
-	}
-
 }
 
 #cardRight{
-	
-	@include mQ(600px){
-		left: 24%;
-	}
 
 }
 
@@ -83,20 +82,19 @@
 	height: 90%;
 }
 
-.cardInfo {
-	position: relative;
-	height: 20vh;
-	width : 100%;
-	background-color: $washedBlue;
-
-}
 
 .clickable-passive {
 	position: relative;
     cursor: pointer;
     display: inline-block;
     width: 25%;
-        padding: 2% 0;
+    padding: 2% 0;
+
+    @include mQ(750px) {
+    	width: 100%;
+    	padding: 0;
+    	margin: 0 !important;
+    }
 }
 
 .clickable-active {
@@ -108,6 +106,13 @@
     padding: 2% 0;
     border-radius: 30px;
     box-shadow: $liteShadow;
+
+	@include mQ(750px) {
+    	width: 100%;
+    	padding: 0;
+    	margin: 0 !important;
+    }
+
 }
 
 .text-container {
@@ -122,10 +127,18 @@
 	position: relative;
 	width: 90%;
     left: 5%;
+    padding: 1vh 0 1vh 0;
     box-shadow: $insetShadow;
+    background-color: $washedBlue;
 }
 
 #cardCenterId {
 	margin-left: 12.5%;
 	margin-right: 12.5%;
+}
+
+@include mQ(750px) {
+	.placeholder-10{
+		height: 0;
+	}
 }
