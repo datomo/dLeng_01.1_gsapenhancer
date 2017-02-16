@@ -110,7 +110,7 @@ class Slide0 extends React.Component {
 
 	render() {
 		return (
-				<div>
+				<div className="slide-container">
 					<div className="startAnimation">
 						<div className="text-center">
 							<h1 className="display-1">{this.state.text}</h1>

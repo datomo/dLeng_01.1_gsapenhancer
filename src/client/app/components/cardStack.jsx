@@ -61,7 +61,7 @@ class CardStack extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="slide-cardStack">
 				<div className="card-stack">
 					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeTextLeft}>
 						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={"public/" + Ref}/>

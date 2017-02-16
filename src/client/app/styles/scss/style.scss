@@ -13,6 +13,8 @@ html {
 
 .placeholder-10 {
 	height: 50px;
+	position: relative;
+	top:0%;
 }
 
 .placeholderMenu{
@@ -90,6 +92,11 @@ button{
     width: 80%;
     left: 10%;
 	top: 40%;
+
 }
 
+.slide-container {
+	position: relative;
+	height: 100%;
 
+}

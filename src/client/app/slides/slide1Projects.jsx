@@ -11,7 +11,7 @@ export default class Slide1 extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="slide-project">
 				<h1 id ="title-slide01"  className="display-1 child-container">Projects</h1>
 				<CardStack />
 			</div>
