@@ -46,13 +46,8 @@ var config = {
 			{
 			    test: /\.(jpg|png|gif)$/i,
 			    include : APP_DIR, 
-			    loaders: [
-			    'file-loader?name=/compImg/[hash].[ext]',
-				    {
-			          loader: 'image-webpack-loader?progressive=true',
-        			},
-			    ]
-			    
+			    loader: 
+			    'file-loader?name=/compImg/[hash].[ext]!image-maxsize-webpack-loader?max-width=800!image-webpack-loader?progressive=true'
 			}
 		]
 	},
