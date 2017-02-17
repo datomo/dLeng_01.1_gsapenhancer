@@ -7,6 +7,8 @@ var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var SCSS_DIR = path.resolve(__dirname, 'src/client/app/styles/scss');
 
+var IMG_DIR = path.resolve(__dirname, 'src/client/public/compImg');
+
 var config = {
 	entry: APP_DIR + '/index.jsx',
 	output: {
@@ -42,14 +44,27 @@ var config = {
     			]						
 			},
 			{
-			    test: /\.(jpe?g|png|gif)$/,
+			    test: /\.(jpg|png|gif)$/i,
 			    include : APP_DIR, 
-			    loader: 'file-loader?name=/compImg/[hash].[ext]!img-loader' 
+			    loaders: [
+			    'file-loader?name=/compImg/[hash].[ext]',
+				    {
+			          loader: 'image-webpack-loader?progressive=true',
+        			},
+			    ]
 			    
 			}
 		]
 	},
 	plugins: [
+		new webpack.DefinePlugin({ // <-- key to reducing React's size
+	      'process.env': {
+	        'NODE_ENV': JSON.stringify('production')
+	      }
+	    }), 
+	    new webpack.optimize.UglifyJsPlugin(), //minify everything
+	    new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
+
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
   		})
