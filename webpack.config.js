@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var CompressionPlugin = require("compression-webpack-plugin");
 const ExtractTextWebpack = require("extract-text-webpack-plugin");
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
@@ -13,6 +14,7 @@ var config = {
 	entry: APP_DIR + '/index.jsx',
 	output: {
 		path: BUILD_DIR,
+		publicPath: "/public/",
 		filename: 'bundle.js'
 	},
 	module: {
@@ -51,18 +53,15 @@ var config = {
 			}
 		]
 	},
+		devServer: {
+	    	contentBase: "./src/client"
+	},
 	plugins: [
-		new webpack.DefinePlugin({ // <-- key to reducing React's size
-	      'process.env': {
-	        'NODE_ENV': JSON.stringify('production')
-	      }
-	    }), 
-	    new webpack.optimize.UglifyJsPlugin(), //minify everything
-	    new webpack.optimize.AggressiveMergingPlugin(),//Merge chunks 
-
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
-  		})
+  		}),
+
+
 	]
 };
 
