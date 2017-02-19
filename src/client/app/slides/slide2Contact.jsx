@@ -25,7 +25,7 @@ export default class Slide2 extends React.Component {
 	render() {
 		return (
 				<div>
-					<h1 id="title-slide02" className="display-1 animation">Contact</h1>
+					<h1 id="title-slide02" className="display-1 animation">Contacts</h1>
 					<div className="contactBox">
 						<Github id="contactLeft" className="contactSvg" onClick={this.openLink("https://github.com/datomo")}/>
 

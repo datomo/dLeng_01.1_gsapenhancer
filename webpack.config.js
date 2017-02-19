@@ -11,15 +11,14 @@ var SCSS_DIR = path.resolve(__dirname, 'src/client/app/styles/scss');
 var IMG_DIR = path.resolve(__dirname, 'src/client/public/compImg');
 
 var config = {
+	devtool: 'cheap-module-eval-source-map',
 	entry: [
-	'react-hot-loader/patch',
-	'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
-  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+	'webpack-hot-middleware/client?reload=true',
 	APP_DIR + '/index.jsx'
 	],
 	output: {
 		path: BUILD_DIR,
-		publicPath: '/public/',
+		publicPath: '/static/',
 		filename: 'bundle.js'
 	},
 	module: {
