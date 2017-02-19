@@ -11,9 +11,9 @@ var SCSS_DIR = path.resolve(__dirname, 'src/client/app/styles/scss');
 var IMG_DIR = path.resolve(__dirname, 'src/client/public/compImg');
 
 var config = {
-	devtool: 'cheap-module-eval-source-map',
 	entry: [
-	'webpack-hot-middleware/client?reload=true',
+	'react-hot-loader/patch',
+	'webpack-hot-middleware/client',
 	APP_DIR + '/index.jsx'
 	],
 	output: {
@@ -21,6 +21,7 @@ var config = {
 		publicPath: '/static/',
 		filename: 'bundle.js'
 	},
+	devtool: 'inline-source-map',
 	module: {
 		loaders :[
 			{
@@ -57,11 +58,11 @@ var config = {
 			}
 		]
 	},
-		devServer: {
-	    	contentBase: "./src/client",
-	    	historyApiFallback: true,
-	    	hot: true,
-	    	stats: { colors: true}
+	devServer: {
+	    contentBase: "./src/client",
+	  	historyApiFallback: true,
+	   	hot: true,
+	   	stats: { colors: true}
 	},
 	plugins: [
 	  	new ExtractTextWebpack({

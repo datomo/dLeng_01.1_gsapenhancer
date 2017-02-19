@@ -1,22 +1,16 @@
+import { AppContainer } from 'react-hot-loader';
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
+import App from './app.jsx';
 
-import Menu from './components/menu.jsx';
-import MainContent from './content/MainContent.jsx';
+const rootEl = document.getElementById('app');
+const render = Component =>
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    rootEl
+  );
 
-require('./styles/scss/style.scss');
-
-class App extends React.Component {
-	render() {
-		return (
-			<div>
-				<Menu />	
-				<MainContent/>
-				<p>test me bitch</p>
-			</div>
-		);
-	}
-}
-
-const app = document.getElementById('app');
-render( <App/>, app);
+render(App);
+if (module.hot) module.hot.accept('./app.jsx', () => render(App));
