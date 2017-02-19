@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "watcher": "node server.js",
     "dev": "webpack -d --watch",
     "build": "webpack -p"
   },
@@ -33,6 +34,7 @@
     "image-webpack-loader": "^3.2.0",
     "imports-loader": "^0.7.0",
     "node-sass": "^4.5.0",
+    "react-hot-loader": "^3.0.0-beta.6",
     "react-svg-loader": "^1.1.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",

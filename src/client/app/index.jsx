@@ -10,8 +10,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+
 				<Menu />	
 				<MainContent/>
+				<p>test me</p>
 			</div>
 		);
 	}

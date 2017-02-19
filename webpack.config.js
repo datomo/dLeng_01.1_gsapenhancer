@@ -11,10 +11,15 @@ var SCSS_DIR = path.resolve(__dirname, 'src/client/app/styles/scss');
 var IMG_DIR = path.resolve(__dirname, 'src/client/public/compImg');
 
 var config = {
-	entry: APP_DIR + '/index.jsx',
+	entry: [
+	'react-hot-loader/patch',
+	'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+	APP_DIR + '/index.jsx'
+	],
 	output: {
 		path: BUILD_DIR,
-		publicPath: "/public/",
+		publicPath: '/public/',
 		filename: 'bundle.js'
 	},
 	module: {
@@ -28,7 +33,7 @@ var config = {
 			{
 				test: /\.jsx?/,
 				include : APP_DIR,
-				loader : 'babel-loader',
+				loaders : ['babel-loader'],
 			},
 			{
 				test: /\.svg$/,
@@ -54,14 +59,22 @@ var config = {
 		]
 	},
 		devServer: {
-	    	contentBase: "./src/client"
+	    	contentBase: "./src/client",
+	    	historyApiFallback: true,
+	    	hot: true,
+	    	stats: { colors: true}
 	},
 	plugins: [
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
   		}),
+  		new webpack.HotModuleReplacementPlugin(),
 
+  		new webpack.NamedModulesPlugin(),
+	    // prints more readable module names in the browser console on HMR updates
 
+	    new webpack.NoEmitOnErrorsPlugin(),
+	    // do not emit compiled assets that include errors
 	]
 };
 
