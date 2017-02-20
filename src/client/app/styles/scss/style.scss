@@ -72,14 +72,14 @@ p {
 
 
 #slide01{
-	
+	background-color: $liteBlue;
 }
 #slide02{
-	background-color: #eee;
+	background-color: $liteBlue;
 	min-height: 950px;
 }
 #slide03{
-	
+	background-color: $liteBlue;
 }
 
 button{
@@ -111,4 +111,9 @@ button{
 	position: relative;
 	height: 100%;
 
+}
+
+.filler {
+	height: 100px;
+	position: relative;
 }
