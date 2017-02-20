@@ -3,6 +3,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 
 import Slide from '../components/slide.jsx';
+import FillerSlide from '../components/fillerSlide.jsx';
 
 import Slide0 from '../slides/slide0Start.jsx';
 import Slide1 from '../slides/slide1Projects.jsx';
@@ -18,6 +19,7 @@ export default class MainContent extends React.Component {
 						<Slide0 />
 					</Slide>
 				</ScrollableAnchor>
+				<FillerSlide />
 				<ScrollableAnchor id={'section2'} >
 					<Slide id="slide02">  
 						<Slide1 />

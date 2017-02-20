@@ -11,8 +11,6 @@ const part2 = "I spezialized in web animations but also got experience in other 
 const part3 = "You just discovered my little portfolio. Here you'll see some of my past projects and skills."
 const part4 = "I hope you enjoy what you see and if you would like to work with me just contact me at the end of the page."
 
-CSSPlugin.defaultForce3D = false;
-
 function moveAnimation({target}) {
 	const part1 = target.find({id: 'part1'})
 	const mySplitText1 = new SplitText(part1, {type:"words,chars, lines"}) 
@@ -25,19 +23,20 @@ function moveAnimation({target}) {
     const lines3 = mySplitText3.lines; 
 	const part4 = target.find({id: 'part4'})
 	const mySplitText4 = new SplitText(part4, {type:"words,chars, lines"}) 
-    const lines4 = mySplitText4.lines; 
+    const lines4 = mySplitText4.chars; 
 	const duration = 3
   	return (
   		new TimelineMax({})
   		
   		.add('start')
-  		.staggerFrom(lines1, 1, {autoAlpha:0, x: 100}, 0.1, "+=0")
+  		.staggerFrom(lines1, 1, {autoAlpha:0, x: 100}, 0.5, "+=0")
   		.to(part1, 1, {autoAlpha:0, delay: duration})
-  		.staggerFrom(lines2, 1, {autoAlpha:0}, 0.1, "+=0")
+  		.set(part2,{perspective: 600})
+  		.staggerFrom(lines2, 1, {autoAlpha:0, rotationX:80, y: 100}, 0.01, "+=0")
   		.to(part2, 1, {autoAlpha:0, delay: duration})
-  		.staggerFrom(lines3, 1, {autoAlpha:0}, 0.1, "+=0")
+  		.staggerFrom(lines3, 1, {autoAlpha:0, y: -100}, 0.5, "+=0")
   		.to(part3, 1, {autoAlpha:0, delay: duration})
-  		.staggerFrom(lines4, 1, {autoAlpha:0}, 0.1, "+=0")
+  		.staggerFrom(lines4, 1, {autoAlpha:0, scale:0, force3D: false}, 0.02, "+=0")
   		.add('end')
 		
   	)

@@ -18,7 +18,7 @@ var config = {
 	],
 	output: {
 		path: BUILD_DIR,
-		publicPath: '/static/',
+		publicPath: '/static',
 		filename: 'bundle.js'
 	},
 	devtool: 'inline-source-map',
@@ -55,7 +55,7 @@ var config = {
 			    test: /\.(jpg|png|gif)$/i,
 			    include : APP_DIR, 
 			    loader: 
-			    'file-loader?name=/compImg/[hash].[ext]!image-maxsize-webpack-loader?max-width=800!image-webpack-loader?progressive=true'
+			    'file-loader?name=[hash].[ext]'
 			}
 		]
 	},
