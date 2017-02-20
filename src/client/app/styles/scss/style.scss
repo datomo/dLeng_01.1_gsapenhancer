@@ -5,6 +5,7 @@
 @import 'menu';
 @import 'cards';
 @import 'contact';
+@import 'home';
 
 
 html {
@@ -77,24 +78,11 @@ button{
 	top: 100%;
 }
 
-.bottom-80 {
-	top: 80%;
-	position: absolute;
-	left: 75%;
-}
-
 .top {
 	position:absolute;
 	top: 0%;
 }
 
-.startAnimation {
-	position: absolute;
-    width: 80%;
-    left: 10%;
-	top: 40%;
-
-}
 
 .slide-container {
 	position: relative;

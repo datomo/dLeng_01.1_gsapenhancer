@@ -64,13 +64,13 @@ class CardStack extends React.Component {
 			<div className="slide-cardStack">
 				<div className="card-stack">
 					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeTextLeft}>
-						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={Ref}/>
+						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={"public/" + Ref}/>
 					</div>
 					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeTextCenter}>
-						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={Leng}/>
+						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={"public/" + Leng}/>
 					</div>
 					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeTextRight}>
-						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={Sprung}/>
+						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={"public/" + Sprung}/>
 					</div>
 				</div>
 				<div className="placeholder-10"></div>
