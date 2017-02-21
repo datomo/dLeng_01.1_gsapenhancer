@@ -62,7 +62,9 @@ var config = {
 
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
-  		})
+  		}),
+    	
+
 	]
 };
 

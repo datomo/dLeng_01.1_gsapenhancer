@@ -1,0 +1,15 @@
+<Directory /var/www/static/css>  
+ AddEncoding gzip gz  
+ ForceType text/css  
+ Options +Multiviews  
+ SetEnv force-no-vary  
+ Header set Cache-Control "private"  
+</Directory>  
+
+<Directory /var/www/static/js>  
+ AddEncoding gzip gz  
+ ForceType text/javascript  
+ Options +Multiviews  
+ SetEnv force-no-vary  
+ Header set Cache-Control "private"  
+</Directory>
