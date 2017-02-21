@@ -31,31 +31,28 @@ class CardStack extends React.Component {
 			classNameRight: "clickable-passive"
 		}
 
-		this.changeTextLeft= this.changeTextLeft.bind(this)
-		this.changeTextCenter= this.changeTextCenter.bind(this)
-		this.changeTextRight= this.changeTextRight.bind(this)
+		this.changeText= this.changeText.bind(this)
 	}
 
 
 
-	changeTextLeft(e) {
-		this.setState({infoText: infoTextLeft})
-		this.setState({classNameLeft: active, classNameCenter: passive, classNameRight: passive})
-		this.setState({projectLink: "refallschwil.ch"})
-	}
+	changeTextLeft(e, position) {
+		if (poisition == "left") {
+			this.setState({infoText: infoTextLeft})
+			this.setState({classNameLeft: active, classNameCenter: passive, classNameRight: passive})
+			this.setState({projectLink: "refallschwil.ch"})
+		} else if (poisiton == "center") {
+			this.setState({infoText: infoTextCenter})
+			this.setState({classNameCenter: active, classNameLeft: passive, classNameRight: passive})
+			this.setState({projectLink: "d-Leng.com"})
+		} else if (position == "right"){
+			this.setState({infoText: infoTextRight})
+			this.setState({classNameRight: active, classNameLeft: passive, classNameCenter: passive})
+			this.setState({projectLink: "sprungbraett-festival.ch"})
+		}
 
-	changeTextCenter(e) {
-		this.setState({infoText: infoTextCenter})
-		this.setState({classNameCenter: active, classNameLeft: passive, classNameRight: passive})
-		this.setState({projectLink: "d-Leng.com"})
+		
 	}
-
-	changeTextRight(e) {
-		this.setState({infoText: infoTextRight})
-		this.setState({classNameRight: active, classNameLeft: passive, classNameCenter: passive})
-		this.setState({projectLink: "sprungbraett-festival.ch"})
-	}
-
 
 	componentDidMount() {
 	}
@@ -63,13 +60,13 @@ class CardStack extends React.Component {
 		return (
 			<div className="slide-cardStack">
 				<div className="card-stack">
-					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeTextLeft}>
+					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeText("left")}>
 						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={Ref}/>
 					</div>
-					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeTextCenter}>
+					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeText("center")}>
 						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={Leng}/>
 					</div>
-					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeTextRight}>
+					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeText("right")}>
 						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={Sprung}/>
 					</div>
 				</div>
