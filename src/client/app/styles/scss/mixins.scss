@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin clearFix{
   &:after{
     content: "";
@@ -30,4 +32,20 @@
 		background-color: darken($snowWhite,6);
 		box-shadow: $hardShadow;
 	}
+}
+
+@mixin gradientIn {
+	background: $colorSlide; /* Old browsers */
+	background: -moz-linear-gradient(top, $colorSlide 2%, $colorFiller 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, $colorSlide 2%, $colorFiller 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $colorSlide 2%, $colorFiller 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorSlide', endColorstr='$colorFiller',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin gradientOut {
+	background: $colorFiller; /* Old browsers */
+	background: -moz-linear-gradient(top, $colorFiller 2%, $colorSlide 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, $colorFiller 2%, $colorSlide 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $colorFiller 2%, $colorSlide 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorFiller', endColorstr='$colorSlide',GradientType=0 ); /* IE6-9 */
 }

@@ -68,6 +68,8 @@ p {
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
+
+	box-shadow: $hardShadow;
 }
 
 
@@ -116,4 +118,22 @@ button{
 .filler {
 	height: 100px;
 	position: relative;
+}
+
+
+.intoFiller {
+	height: 20%;
+	width: 100%;
+	top:0;
+	position: absolute;
+	
+}
+
+.outaFiller {
+	height: 20%;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	
+
 }
