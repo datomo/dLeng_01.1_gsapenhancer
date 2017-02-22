@@ -76,7 +76,7 @@ p {
 
 #slide01{
 	background-color: $liteBlue;
-	height: 50vh;
+	min-height: 50vh;
 
 }
 #slide02{
@@ -139,4 +139,21 @@ button{
 	position: absolute;
 	
 
+}
+
+.left{
+	display:inline-block;
+	position: relative;
+	margin: 0 2% 0;
+}
+
+.center{
+	display: inline-block;
+    position: relative;
+    margin: 0 5%;
+}
+
+.right{
+	display:inline-block;
+	position: relative;
 }

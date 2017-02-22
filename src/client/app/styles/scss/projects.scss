@@ -1,8 +1,11 @@
+@import 'mixins';
+
 #containerProject {
 	height: 100%;
 	width:90%;
 	left: 5%;
 	position: relative;
+
 }
 #containerTitelSelect{
 	position: absolute;
@@ -15,7 +18,7 @@
 
 #containerDisplay {
 	position: absolute;
-	background-Color: black;
+	background-Color: white;
 	width: 60%;
 	left: 0;
 	height: 60%;
@@ -39,3 +42,4 @@
 	height: 60%;
 	top: 30%;
 }
+

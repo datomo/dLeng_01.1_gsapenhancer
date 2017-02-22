@@ -10,7 +10,7 @@ export default class ProjectContainer extends React.Component {
 		return (
 			<div id="containerProject">
 				<div id="titel">
-					<h3 id="projectsTitel">Projects</h3>
+					<h1 className="display-1" id="projectsTitel">Projects</h1>
 				</div>
 				<div id="containerTitelSelect"> <TitelSelect/></div>
 				<div id="containerDisplay"> <Display/></div>
