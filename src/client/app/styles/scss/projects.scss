@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'variables';
 
 #containerProject {
 	height: 100%;
@@ -9,37 +10,56 @@
 }
 #containerTitelSelect{
 	position: absolute;
-	background-Color: blue;
+	//background-Color: blue;
 	width: 60%;
+	top: 10%;
 	left: 0;
-	height: 10%;
-	top: 15%;
+	height: 12%;
+	box-shadow: $hardShadow;
+	z-index: -2;
 }
 
 #containerDisplay {
 	position: absolute;
 	background-Color: white;
-	width: 60%;
-	left: 0;
-	height: 60%;
-	top: 30%
+	width: 100%;
+    left: 0;
+    height: 70%;
+    top: 20%;
+    box-shadow: $hardShadow;
 }
 
 #containerIcon {
 	position: absolute;
-	background-Color: red;
 	width: 35%;
 	left: 65%;
-	height: 25%;
-	top: 0;
+	height: 12%; //2% for the shadow
+	top: 10%;
+	box-shadow: $hardShadow;
+	z-index: -2;
+
+	p{
+		margin: 0 2% 0;
+	}
 }
 
 #containerConsole {
 	position: absolute;
-	background-Color: yellow;
-	width: 35%;
-	left: 65%;
-	height: 60%;
-	top: 30%;
+	background-Color: #232321;
+	width: 33%;
+    left: 66%;
+    height: 58%;
+    top: 31%;
+    box-shadow: $liteShadow;
 }
 
+.img-display{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.passive-title{
+
+}

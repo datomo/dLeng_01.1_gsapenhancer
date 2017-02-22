@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+
 var CompressionPlugin = require("compression-webpack-plugin");
 const ExtractTextWebpack = require("extract-text-webpack-plugin");
 
@@ -28,7 +29,20 @@ var config = {
 				test:/\.scss?/,
 				include: SCSS_DIR,
 				use: ExtractTextWebpack.extract({
-          			use: "css-loader!sass-loader"
+          			use: [
+          				"css-loader",
+          				{
+				            loader: 'postcss-loader',
+				            options: {
+				              plugins: function () {
+				                return [
+				                  require('autoprefixer')
+				                ];
+				              }
+				            }
+				          },
+          				"sass-loader"
+          				]
         		})
 			},
 			{
@@ -69,6 +83,7 @@ var config = {
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
   		}),
+
   		new webpack.HotModuleReplacementPlugin(),
 
   		new webpack.NamedModulesPlugin(),
