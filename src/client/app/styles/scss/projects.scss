@@ -1,0 +1,41 @@
+#containerProject {
+	height: 100%;
+	width:90%;
+	left: 5%;
+	position: relative;
+}
+#containerTitelSelect{
+	position: absolute;
+	background-Color: blue;
+	width: 60%;
+	left: 0;
+	height: 10%;
+	top: 15%;
+}
+
+#containerDisplay {
+	position: absolute;
+	background-Color: black;
+	width: 60%;
+	left: 0;
+	height: 60%;
+	top: 30%
+}
+
+#containerIcon {
+	position: absolute;
+	background-Color: red;
+	width: 35%;
+	left: 65%;
+	height: 25%;
+	top: 0;
+}
+
+#containerConsole {
+	position: absolute;
+	background-Color: yellow;
+	width: 35%;
+	left: 65%;
+	height: 60%;
+	top: 30%;
+}

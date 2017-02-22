@@ -36,12 +36,12 @@ class CardStack extends React.Component {
 
 
 
-	changeTextLeft(e, position) {
-		if (poisition == "left") {
+	changeText(e, position) {
+		if (position == "left") {
 			this.setState({infoText: infoTextLeft})
 			this.setState({classNameLeft: active, classNameCenter: passive, classNameRight: passive})
 			this.setState({projectLink: "refallschwil.ch"})
-		} else if (poisiton == "center") {
+		} else if (position == "center") {
 			this.setState({infoText: infoTextCenter})
 			this.setState({classNameCenter: active, classNameLeft: passive, classNameRight: passive})
 			this.setState({projectLink: "d-Leng.com"})
@@ -60,13 +60,13 @@ class CardStack extends React.Component {
 		return (
 			<div className="slide-cardStack">
 				<div className="card-stack">
-					<div className={this.state.classNameLeft} id="cardLeftId" onClick={this.changeText("left")}>
+					<div className={this.state.classNameLeft} id="cardLeftId" onClick={e => this.changeText(e, "left")}>
 						<Card className="cardNormal" id="cardLeft"  title="refallschwil.ch" imgLink={Ref}/>
 					</div>
-					<div className={this.state.classNameCenter} id="cardCenterId" onClick={this.changeText("center")}>
+					<div className={this.state.classNameCenter} id="cardCenterId" onClick={e => this.changeText(e, "center")}>
 						<Card className="cardNormal" id="cardCenter" title="Prototype Portfolio" imgLink={Leng}/>
 					</div>
-					<div className={this.state.classNameRight} id="cardRightId" onClick={this.changeText("right")}>
+					<div className={this.state.classNameRight} id="cardRightId" onClick={e => this.changeText(e, "right")}>
 						<Card className="cardNormal" id="cardRight" title="sprungbraett-festival.ch" imgLink={Sprung}/>
 					</div>
 				</div>

@@ -6,6 +6,7 @@
 @import 'cards';
 @import 'contact';
 @import 'home';
+@import 'projects';
 
 
 html {
@@ -75,10 +76,12 @@ p {
 
 #slide01{
 	background-color: $liteBlue;
+	height: 50vh;
+
 }
 #slide02{
-	background-color: $liteBlue;
 	min-height: 950px;
+	box-shadow: none;
 }
 #slide03{
 	background-color: $liteBlue;

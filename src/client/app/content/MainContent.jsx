@@ -19,7 +19,6 @@ export default class MainContent extends React.Component {
 						<Slide0 />
 					</Slide>
 				</ScrollableAnchor>
-				<FillerSlide />
 				<ScrollableAnchor id={'section2'} >
 					<Slide id="slide02">  
 						<Slide1 />

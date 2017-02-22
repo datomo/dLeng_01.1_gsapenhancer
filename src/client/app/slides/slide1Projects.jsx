@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-import CardStack from '../components/cardStack.jsx'
+import CardStack from '../components/cardStack.jsx';
 
+import ProjectContainer from '../container/projectContainer.jsx';
 
 export default class Slide1 extends React.Component {
 	componentDidMount() {
@@ -12,8 +13,7 @@ export default class Slide1 extends React.Component {
 	render() {
 		return (
 			<div className="slide-project">
-				<h1 id ="title-slide01"  className="display-1 child-container">Projects</h1>
-				<CardStack />
+				<ProjectContainer />
 			</div>
 		);
 	}
