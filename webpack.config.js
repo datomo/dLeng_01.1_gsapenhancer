@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 const ExtractTextWebpack = require("extract-text-webpack-plugin");
+var CompressionPlugin = require('compression-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
@@ -47,7 +48,7 @@ var config = {
 			    test: /\.(jpg|png|gif)$/i,
 			    include : APP_DIR, 
 			    loader: 
-			    'file-loader?name=/compImg/[hash].[ext]!image-maxsize-webpack-loader?max-width=800!image-webpack-loader?progressive=true'
+			    'file-loader?name=/compImg/[hash].[ext]!image-maxsize-webpack-loader?max-width=400!image-webpack-loader?progressive=true'
 			}
 		]
 	},
@@ -63,6 +64,14 @@ var config = {
 	  	new ExtractTextWebpack({
 	    	filename: 'bundle.css'
   		}),
+
+  		new CompressionPlugin({
+            asset: "[path].gz[query]",
+            algorithm: "gzip",
+            test: /\.js$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+        })
     	
 
 	]

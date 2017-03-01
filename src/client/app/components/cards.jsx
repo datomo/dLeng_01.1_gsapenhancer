@@ -23,7 +23,7 @@ class Card extends React.Component {
 		return (
 				<div className="card" id={this.props.id} >
     				<div className="card-img-wrapper">
-    					<img className="card-img-top" src={this.props.imgLink} alt="Card image cap" />
+    					<img className="card-img-top" src={"public/" + this.props.imgLink} alt="Card image cap" />
     				</div>
 
     				<div className="card-block">
