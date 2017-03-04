@@ -13,7 +13,7 @@ export default class Slide1 extends React.Component {
 	render() {
 		return (
 			<div className="slide-project">
-				<ProjectContainer />
+				<CardStack />
 			</div>
 		);
 	}
